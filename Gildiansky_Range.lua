@@ -19,9 +19,9 @@ end
 
 --Wykonuje plik CSAR_Moose.lua
 function CSAR_Moose()
-dofile("C:\\Users\\Gildias1s2\\Saved Games\\#Misje\\09_Skrypty\\DR\\CSAR_Moose.lua")
+dofile(explorer_file_path_default.."CSAR_Moose.lua")
 end
-timer.scheduleFunction(CSAR_Moose, nil, 10)
+timer.scheduleFunction(CSAR_Moose, nil, timer.getTime()+2)
 
 --Wykonuje plik CTLD_Moose.lua
 function CTLD_Moose()
