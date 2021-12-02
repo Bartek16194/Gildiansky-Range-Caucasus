@@ -27,7 +27,7 @@ timer.scheduleFunction(CSAR_Moose, nil, timer.getTime()+2)
 function CTLD_Moose()
 dofile(explorer_file_path_default.."CTLD_Moose.lua")
 end
---timer.scheduleFunction(CTLD_Moose, nil, 10)
+timer.scheduleFunction(CTLD_Moose, nil, timer.getTime()+2)
 
 
 
