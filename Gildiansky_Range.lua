@@ -29,6 +29,10 @@ dofile(explorer_file_path_default.."CTLD_Moose.lua")
 end
 timer.scheduleFunction(CTLD_Moose, nil, timer.getTime()+2)
 
+function info_update()
+MESSAGE:New("Gildiansky by Bartek16194 and VladMordock for gildia.org", 15 ):ToAll()
+end
+timer.scheduleFunction(info_update, nil, 15)
 
 
 -- Tankery oraz AWACS ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
