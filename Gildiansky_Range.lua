@@ -199,6 +199,7 @@ timer.scheduleFunction(info_update, nil, 15)
 	MaykopSAM_Spawn6= SPAWN:New( "DEF Maykop 06" ):InitLimit( 1, 0 ):SpawnScheduled( 5400, .1 )
 	MaykopSAM_Spawn7= SPAWN:New( "DEF Maykop 07" ):InitLimit( 1, 0 ):SpawnScheduled( 5400, .1 )
 	MaykopSAM_Spawn8= SPAWN:New( "DEF Maykop 08" ):InitLimit( 1, 0 ):SpawnScheduled( 5400, .1 )
+	MaykopSAM_Spawn9= SPAWN:New( "DEF Maykop 09" ):InitLimit( 14, 0 ):SpawnScheduled( 5400, .1 )
 	
 	MaykopAAA_Spawn1= SPAWN:New( "DEF Maykop AAA 01" ):InitLimit( 10, 0 ):SpawnScheduled( 5400, .1 )
 	MaykopAAA_Spawn2= SPAWN:New( "DEF Maykop AAA 02" ):InitLimit( 10, 0 ):SpawnScheduled( 5400, .1 )
