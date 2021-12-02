@@ -2,18 +2,47 @@
 -- created for and copyrighted for gildia.org
 
 
+test = false
+
+test_dispaczer = false
+
+serwer_lucasa = false
+
+poradniki = false
+
+--funkcje testowe
+if test == true then
+explorer_file_path_default = "C:\\Users\\Gildias1s2\\Saved Games\\#Misje\\09_Skrypty\\Gildiansky_Range\\dev\\"
+else
+explorer_file_path_default = "C:\\Users\\Gildias1s2\\Saved Games\\#Misje\\09_Skrypty\\Gildiansky_Range\\"
+end
+
+--Wykonuje plik CSAR_Moose.lua
+function CSAR_Moose()
+dofile("C:\\Users\\Gildias1s2\\Saved Games\\#Misje\\09_Skrypty\\DR\\CSAR_Moose.lua")
+end
+timer.scheduleFunction(CSAR_Moose, nil, 10)
+
+--Wykonuje plik CTLD_Moose.lua
+function CTLD_Moose()
+dofile(explorer_file_path_default.."CTLD_Moose.lua")
+end
+--timer.scheduleFunction(CTLD_Moose, nil, 10)
+
+
+
 -- Tankery oraz AWACS ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-	Texaco=			SPAWN:New("Tanker 50Y Texaco")	:InitLimit( 1, 0 ):SpawnScheduled( 60, .1 ):InitRepeatOnLanding()
-	Shell=			SPAWN:New("Tanker 51Y Shell")	:InitLimit( 1, 0 ):SpawnScheduled( 60, .1 ):InitRepeatOnLanding()
-	Texaco2=		SPAWN:New("Tanker 52Y Texaco 2"):InitLimit( 1, 0 ):SpawnScheduled( 60, .1 ):InitRepeatOnLanding()
-	Shell2=			SPAWN:New("Tanker 53Y Shell 2")	:InitLimit( 1, 0 ):SpawnScheduled( 60, .1 ):InitRepeatOnLanding()
-	Texaco3=		SPAWN:New("Tanker 54Y Texaco 3"):InitLimit( 1, 0 ):SpawnScheduled( 60, .1 ):InitRepeatOnLanding()
-	Shell3=			SPAWN:New("Tanker 55Y Shell 3")	:InitLimit( 1, 0 ):SpawnScheduled( 60, .1 ):InitRepeatOnLanding()	
-	Arco2=			SPAWN:New("Tanker 70Y Arco 2")	:InitLimit( 1, 0 ):SpawnScheduled( 60, .1 ):InitRepeatOnLanding()
+	Texaco=			SPAWN:New("Tanker 50Y Texaco")	:InitLimit( 1, 0 ):SpawnScheduled( 60, .1 ):OnSpawnGroup( function (texaco_11) texaco_11:CommandSetCallsign(1,1) end):InitRepeatOnLanding()
+	Shell=			SPAWN:New("Tanker 51Y Shell")	:InitLimit( 1, 0 ):SpawnScheduled( 60, .1 ):OnSpawnGroup( function (shell_11) shell_11:CommandSetCallsign(3,1) end):InitRepeatOnLanding()
+	Texaco2=		SPAWN:New("Tanker 52Y Texaco 2"):InitLimit( 1, 0 ):SpawnScheduled( 60, .1 ):OnSpawnGroup( function (texaco_21) texaco_21:CommandSetCallsign(1,2) end):InitRepeatOnLanding()
+	Shell2=			SPAWN:New("Tanker 53Y Shell 2")	:InitLimit( 1, 0 ):SpawnScheduled( 60, .1 ):OnSpawnGroup( function (shell_11) shell_11:CommandSetCallsign(3,2) end):InitRepeatOnLanding()
+	Texaco3=		SPAWN:New("Tanker 54Y Texaco 3"):InitLimit( 1, 0 ):SpawnScheduled( 60, .1 ):OnSpawnGroup( function (texaco_31) texaco_31:CommandSetCallsign(1,3) end):InitRepeatOnLanding()
+	Shell3=			SPAWN:New("Tanker 55Y Shell 3")	:InitLimit( 1, 0 ):SpawnScheduled( 60, .1 ):OnSpawnGroup( function (shell_31) shell_31:CommandSetCallsign(3,3) end):InitRepeatOnLanding()	
+	Arco2=			SPAWN:New("Tanker 70Y Arco 2")	:InitLimit( 1, 0 ):SpawnScheduled( 60, .1 ):OnSpawnGroup( function (arco_21) arco_21:CommandSetCallsign(2,2) end):InitRepeatOnLanding()
 
-	AWACSOverlord=	SPAWN:New("AWACS Overlord")		:InitLimit( 1, 0 ):SpawnScheduled( 60, .1 ):InitRepeatOnLanding()
-	AWACSDarkstar=	SPAWN:New("AWACS Darkstar")		:InitLimit( 1, 0 ):SpawnScheduled( 60, .1 ):InitRepeatOnLanding()
+	AWACSOverlord=	SPAWN:New("AWACS Overlord")		:InitLimit( 1, 0 ):SpawnScheduled( 60, .1 ):OnSpawnGroup( function (Overlord_11) Overlord_11:CommandSetCallsign(1,1) end):InitRepeatOnLanding()
+	AWACSDarkstar=	SPAWN:New("AWACS Darkstar")		:InitLimit( 1, 0 ):SpawnScheduled( 60, .1 ):OnSpawnGroup( function (Darkstar_11) Darkstar_11:CommandSetCallsign(5,1) end):InitRepeatOnLanding()
 
 	AWACS100=		SPAWN:New("RED AWACS 100")		:InitLimit( 1, 0 ):SpawnScheduled( 60, .1 ):InitRepeatOnLanding()
 	AWACSE3Red=		SPAWN:New("RED AWACS E-3")		:InitLimit( 1, 0 ):SpawnScheduled( 60, .1 ):InitRepeatOnLanding()
@@ -129,7 +158,7 @@
 	A2A_CAP:SetSquadronCap( "Carrier Su-33", North_CAP_Lotniskowiec, UTILS.FeetToMeters(19000), UTILS.FeetToMeters(27000), UTILS.KnotsToKmph(270), UTILS.KnotsToKmph(320), UTILS.KnotsToKmph(270), UTILS.KnotsToKmph(900), "BARO" )
 	A2A_CAP:SetSquadronCapRacetrack( "Carrier Su-33", UTILS.FeetToMeters(19000), UTILS.FeetToMeters(27000), 120, 305, 20*60, 40*60)
 	A2A_CAP:SetSquadronCapInterval( "Carrier Su-33", 2, 30, 90, 1 )
-	A2A_CAP:SetSquadronGci( "Carrier Su-33", 900, 1200 )
+	--A2A_CAP:SetSquadronGci( "Carrier Su-33", 900, 1200 )
 	A2A_CAP:SetSquadronTakeoffFromParkingCold("Carrier Su-33")
 	
 	
@@ -147,7 +176,7 @@
 	A2A_CAP:SetDefaultFuelThreshold(0.20)
 	A2A_CAP:SetDefaultGrouping(2)
 	A2A_CAP:SetDefaultDamageThreshold( 0.90 )
-	A2A_CAP:SetDefaultCapLimit(10)
+	A2A_CAP:SetDefaultCapLimit(6)
 	A2A_CAP:SetGciRadius( 125000 )
 	
 	A2A_CAP:SetTacticalDisplay( false )
@@ -214,13 +243,13 @@
 	
 	
 -- Obrona Sochi
-	SochiSAM_Spawn1= SPAWN:New( "DEF Sochi 01" ):InitLimit( 1, 0 ):SpawnScheduled( 5400, .1 )
-	SochiSAM_Spawn2= SPAWN:New( "DEF Sochi 02" ):InitLimit( 1, 0 ):SpawnScheduled( 5400, .1 )
-	SochiSAM_Spawn3= SPAWN:New( "DEF Sochi 03" ):InitLimit( 1, 0 ):SpawnScheduled( 5400, .1 )
-	SochiSAM_Spawn4= SPAWN:New( "DEF Sochi 04" ):InitLimit( 1, 0 ):SpawnScheduled( 5400, .1 )
-	SochiSAM_Spawn5= SPAWN:New( "DEF Sochi 05" ):InitLimit( 14, 0 ):SpawnScheduled( 5400, .1 )
+	SochiSAM_Spawn1= SPAWN:New( "DEF Sochi 01" ):InitLimit( 3, 0 ):SpawnScheduled( 5400, .1 )
+	SochiSAM_Spawn2= SPAWN:New( "DEF Sochi 02" ):InitLimit( 3, 0 ):SpawnScheduled( 5400, .1 )
+	SochiSAM_Spawn3= SPAWN:New( "DEF Sochi 03" ):InitLimit( 3, 0 ):SpawnScheduled( 5400, .1 )
+	SochiSAM_Spawn4= SPAWN:New( "DEF Sochi 04" ):InitLimit( 2, 0 ):SpawnScheduled( 5400, .1 )
+	SochiSAM_Spawn5= SPAWN:New( "DEF Sochi 05" ):InitLimit( 16, 0 ):SpawnScheduled( 5400, .1 )
 	
-	SochiAAA_Spawn1= SPAWN:New( "DEF Sochi AAA 01" ):InitLimit( 10, 0 ):SpawnScheduled( 5400, .1 )
+	SochiAAA_Spawn1= SPAWN:New( "DEF Sochi AAA 01" ):InitLimit( 14, 0 ):SpawnScheduled( 5400, .1 )
 	SochiAAA_Spawn2= SPAWN:New( "DEF Sochi AAA 02" ):InitLimit( 10, 0 ):SpawnScheduled( 5400, .1 )
 	SochiAAA_Spawn3= SPAWN:New( "DEF Sochi AAA 03" ):InitLimit( 5, 0 ):SpawnScheduled( 5400, .1 )
 	SochiAAA_Spawn4= SPAWN:New( "DEF Sochi AAA 04" ):InitLimit( 5, 0 ):SpawnScheduled( 5400, .1 )
@@ -682,5 +711,47 @@ Poligon_AS_05_Spawner()
 	Spawner_Main_AS_05 = MENU_COALITION_COMMAND:New( coalition.side.BLUE, "AS 05", Spawner_Main_AS, Poligon_AS_05_Spawner)
 	Spawner_Main_AS_06 = MENU_COALITION_COMMAND:New( coalition.side.BLUE, "AS 06", Spawner_Main_AS, Poligon_AS_06_Spawner)
 	
+
+test = false
+
+test_dispaczer = false
+
+serwer_lucasa = false
+
+poradniki = false
+
+--funkcje testowe
+if test == true then
+explorer_file_path_default = "C:\\Users\\Gildias1s2\\Saved Games\\#Misje\\09_Skrypty\\Gildiansky_Range\\dev\\"
+else
+explorer_file_path_default = "C:\\Users\\Gildias1s2\\Saved Games\\#Misje\\09_Skrypty\\Gildiansky_Range\\"
+end
+
+--Wykonuje plik CSAR_Moose.lua
+function CSAR_Moose()
+dofile("C:\\Users\\Gildias1s2\\Saved Games\\#Misje\\09_Skrypty\\DR\\CSAR_Moose.lua")
+end
+timer.scheduleFunction(CSAR_Moose, nil, 10)
+
+--Wykonuje plik CTLD_Moose.lua
+function CTLD_Moose()
+dofile(explorer_file_path_default.."CTLD_Moose.lua")
+end
+--timer.scheduleFunction(CTLD_Moose, nil, 10)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	
