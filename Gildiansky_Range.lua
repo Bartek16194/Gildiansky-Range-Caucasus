@@ -79,6 +79,7 @@ timer.scheduleFunction(info_update, nil, 15)
 	TECHNIKA_FARP_PARIS = SPAWN:New( "BLUE TECH FARP Paris 01" ):InitLimit( 4, 0 ):SpawnScheduled( 5400, .1 )
 	TECHNIKA_FARP_ROME = SPAWN:New( "BLUE TECH FARP Rome 01" ):InitLimit( 4, 0 ):SpawnScheduled( 5400, .1 )
 	TECHNIKA_FARP_MADRIT = SPAWN:New( "BLUE TECH FARP Madrit 01" ):InitLimit( 4, 0 ):SpawnScheduled( 5400, .1 )
+	TECHNIKA_KUTAISI_WEST = SPAWN:New( "BLUE TECH Kutaisi-West" ):InitLimit( 6, 0 ):SpawnScheduled( 5400, .1 )
 
 
 -- OKRĘTY-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
