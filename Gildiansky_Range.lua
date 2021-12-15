@@ -93,43 +93,67 @@ timer.scheduleFunction(info_update, nil, 15)
 
 	CapZone_RED_Vaziani_J11 = ZONE_POLYGON:New( "A2A Vaziani 01 Su27", GROUP:FindByName( "A2A Vaziani 01 Su27" ) )
 	CapZone_RED_Vaziani_Mig23 = ZONE_POLYGON:New( "A2A Vaziani 01 MiG23", GROUP:FindByName( "A2A Vaziani 01 MiG23" ) )
+	CapZone_RED_Vaziani_Sabre = ZONE_POLYGON:New( "A2A Vaziani 01 Sabre", GROUP:FindByName( "A2A Vaziani 01 Sabre" ) )
 
+	South_CAP_Border = ZONE_POLYGON:New( "A2A Vaziani OLD BORDER", GROUP:FindByName( "A2A Vaziani OLD BORDER" ) )
+	J11_CAP_Border = ZONE_POLYGON:New( "A2A Vaziani J11 BORDER", GROUP:FindByName( "A2A Vaziani J11 BORDER" ) )	
+	
+	
 	South_CAP_Detection_Units = SET_GROUP:New()
 	South_CAP_Detection_Units:FilterPrefixes( { "RED","DEF"} )
 	South_CAP_Detection_Units:FilterStart()
 	South_CAP_Detection = DETECTION_AREAS:New( South_CAP_Detection_Units, 300000 )
 	
-	South_CAP_Border = ZONE_POLYGON:New( "A2A Vaziani BORDER", GROUP:FindByName( "A2A Vaziani BORDER" ) )
 	
+	A2A_Vaziani_OLD = AI_A2A_DISPATCHER:New( South_CAP_Detection )
+	A2A_Vaziani_OLD:SetBorderZone( South_CAP_Border )
 	
-	A2A_Vaziani_CAP = AI_A2A_DISPATCHER:New( South_CAP_Detection )
-	A2A_Vaziani_CAP:SetBorderZone( South_CAP_Border )
+	A2A_Vaziani_OLD:SetSquadron( "Vaziani MiG23", AIRBASE.Caucasus.Vaziani, "RED CAP VAZIANI MIG23 01")
+	A2A_Vaziani_OLD:SetSquadronCap( "Vaziani MiG23", CapZone_RED_Vaziani_Mig23, UTILS.FeetToMeters(19000), UTILS.FeetToMeters(27000), UTILS.KnotsToKmph(270), UTILS.KnotsToKmph(320), UTILS.KnotsToKmph(270), UTILS.KnotsToKmph(900), "BARO" )
+	A2A_Vaziani_OLD:SetSquadronCapRacetrack( "Vaziani MiG23", UTILS.FeetToMeters(19000), UTILS.FeetToMeters(27000), 120, 305, 20*60, 40*60)
+	A2A_Vaziani_OLD:SetSquadronCapInterval( "Vaziani MiG23", 1, 30, 90, 1 )
+	--A2A_Vaziani_OLD:SetSquadronGci( "Vaziani MiG23", 900, 1200 )
 
-	A2A_Vaziani_CAP:SetSquadron( "Vaziani J11", AIRBASE.Caucasus.Tbilisi_Lochini, "RED CAP VAZIANI J11")
-	A2A_Vaziani_CAP:SetSquadronCap( "Vaziani J11", CapZone_RED_Vaziani_J11, UTILS.FeetToMeters(21000), UTILS.FeetToMeters(27000), UTILS.KnotsToKmph(270), UTILS.KnotsToKmph(320), UTILS.KnotsToKmph(270), UTILS.KnotsToKmph(900), "BARO" )
-	A2A_Vaziani_CAP:SetSquadronCapRacetrack( "Vaziani J11", UTILS.FeetToMeters(21000), UTILS.FeetToMeters(27000), 240, 60, 20*60, 40*60)
-	A2A_Vaziani_CAP:SetSquadronCapInterval( "Vaziani J11", 2, 30, 90, 1 )
-	A2A_Vaziani_CAP:SetSquadronGci( "Vaziani J11", 900, 1200 )
+	A2A_Vaziani_OLD:SetSquadron( "Soganlug Sabre", AIRBASE.Caucasus.Soganlug, "RED CAP VAZIANI F86F")
+	A2A_Vaziani_OLD:SetSquadronCap( "Soganlug Sabre", CapZone_RED_Vaziani_Sabre, UTILS.FeetToMeters(10000), UTILS.FeetToMeters(19000), UTILS.KnotsToKmph(270), UTILS.KnotsToKmph(320), UTILS.KnotsToKmph(270), UTILS.KnotsToKmph(900), "BARO" )
+	A2A_Vaziani_OLD:SetSquadronCapRacetrack( "Soganlug Sabre", UTILS.FeetToMeters(19000), UTILS.FeetToMeters(27000), 120, 305, 10*60, 20*60)
+	A2A_Vaziani_OLD:SetSquadronCapInterval( "Soganlug Sabre", 1, 30, 90, 1 )
 
-
-	A2A_Vaziani_CAP:SetSquadron( "Vaziani MiG23", AIRBASE.Caucasus.Vaziani, "RED CAP VAZIANI MIG23 01")
-	A2A_Vaziani_CAP:SetSquadronCap( "Vaziani MiG23", CapZone_RED_Vaziani_Mig23, UTILS.FeetToMeters(19000), UTILS.FeetToMeters(27000), UTILS.KnotsToKmph(270), UTILS.KnotsToKmph(320), UTILS.KnotsToKmph(270), UTILS.KnotsToKmph(900), "BARO" )
-	A2A_Vaziani_CAP:SetSquadronCapRacetrack( "Vaziani MiG23", UTILS.FeetToMeters(19000), UTILS.FeetToMeters(27000), 120, 305, 20*60, 40*60)
-	A2A_Vaziani_CAP:SetSquadronCapInterval( "Vaziani MiG23", 2, 30, 90, 1 )
-	A2A_Vaziani_CAP:SetSquadronGci( "Vaziani MiG23", 900, 1200 )
-	A2A_Vaziani_CAP:SetSquadronTakeoffFromParkingCold("Vaziani MiG23")
+	A2A_Vaziani_OLD:SetSquadron( "Beslan Sabre", AIRBASE.Caucasus.Beslan, "RED CAP VAZIANI F86F")
+	A2A_Vaziani_OLD:SetSquadronCap( "Beslan Sabre", CapZone_RED_Vaziani_Sabre, UTILS.FeetToMeters(10000), UTILS.FeetToMeters(19000), UTILS.KnotsToKmph(270), UTILS.KnotsToKmph(320), UTILS.KnotsToKmph(270), UTILS.KnotsToKmph(900), "BARO" )
+	A2A_Vaziani_OLD:SetSquadronCapRacetrack( "Beslan Sabre", UTILS.FeetToMeters(19000), UTILS.FeetToMeters(27000), 120, 305, 10*60, 20*60)
+	A2A_Vaziani_OLD:SetSquadronCapInterval( "Beslan Sabre", 1, 30, 90, 1 )
 	
-
-	A2A_Vaziani_CAP:SetDefaultOverhead(1.25)
-	A2A_Vaziani_CAP:SetEngageRadius(100000)
-	A2A_Vaziani_CAP:SetDefaultTakeoffFromParkingHot()
-	A2A_Vaziani_CAP:SetDefaultLandingNearAirbase ()
-	A2A_Vaziani_CAP:SetDefaultFuelThreshold(0.20)
-	A2A_Vaziani_CAP:SetDefaultGrouping(2)
-	A2A_Vaziani_CAP:SetDefaultDamageThreshold( 0.90 )
-	A2A_Vaziani_CAP:SetDefaultCapLimit(6)
+	A2A_Vaziani_OLD:SetDefaultOverhead(1.25)
+	A2A_Vaziani_OLD:SetEngageRadius(65000)
+	A2A_Vaziani_OLD:SetDefaultTakeoffFromParkingHot()
+	A2A_Vaziani_OLD:SetDefaultLandingNearAirbase()
+	A2A_Vaziani_OLD:SetDefaultFuelThreshold(0.20)
+	A2A_Vaziani_OLD:SetDefaultGrouping(2)
+	A2A_Vaziani_OLD:SetDefaultDamageThreshold( 0.90 )
+	A2A_Vaziani_OLD:SetDefaultCapLimit(4)
 	
-	A2A_Vaziani_CAP:SetTacticalDisplay( false )
+-- A2A 01 Vaziani J-11----------------------------	
+	
+	A2A_Vaziani_J11 = AI_A2A_DISPATCHER:New( South_CAP_Detection )
+	A2A_Vaziani_J11:SetBorderZone( South_CAP_Border )
+	
+	A2A_Vaziani_J11:SetSquadron( "Vaziani J11", AIRBASE.Caucasus.Tbilisi_Lochini, "RED CAP VAZIANI J11")
+	A2A_Vaziani_J11:SetSquadronCap( "Vaziani J11", CapZone_RED_Vaziani_J11, UTILS.FeetToMeters(21000), UTILS.FeetToMeters(27000), UTILS.KnotsToKmph(270), UTILS.KnotsToKmph(320), UTILS.KnotsToKmph(270), UTILS.KnotsToKmph(900), "BARO" )
+	A2A_Vaziani_J11:SetSquadronCapRacetrack( "Vaziani J11", UTILS.FeetToMeters(21000), UTILS.FeetToMeters(27000), 240, 60, 20*60, 40*60)
+	A2A_Vaziani_J11:SetSquadronCapInterval( "Vaziani J11", 2, 30, 90, 1 )
+	A2A_Vaziani_J11:SetSquadronGci( "Vaziani J11", 900, 1200 )
+	
+	A2A_Vaziani_J11:SetDefaultOverhead(1.25)
+	A2A_Vaziani_J11:SetEngageRadius(100000)
+	A2A_Vaziani_J11:SetDefaultTakeoffFromParkingHot()
+	A2A_Vaziani_J11:SetDefaultLandingNearAirbase ()
+	A2A_Vaziani_J11:SetDefaultFuelThreshold(0.20)
+	A2A_Vaziani_J11:SetDefaultGrouping(2)
+	A2A_Vaziani_J11:SetDefaultDamageThreshold( 0.90 )
+	A2A_Vaziani_J11:SetDefaultCapLimit(2)
+	
+	A2A_Vaziani_J11:SetTacticalDisplay( false )
 
 
 	
@@ -567,6 +591,22 @@ function Poligon_A2G_14_Spawner()
 	end
 end
 
+-- A2G #15
+function Poligon_A2G_15_Spawner()
+	A2G15_01= SPAWN:New( "A2G 15 01" ):InitLimit( 9, 0 ):SpawnScheduled(5400, .1 )
+	A2G15_02= SPAWN:New( "A2G 15 02" ):InitLimit( 8, 0 ):SpawnScheduled(5400, .1 )
+	A2G15_03= SPAWN:New( "A2G 15 03" ):InitLimit( 8, 0 ):SpawnScheduled(5400, .1 )
+	A2G15_04= SPAWN:New( "A2G 15 04" ):InitLimit( 6, 0 ):SpawnScheduled(5400, .1 )
+	A2G15_05= SPAWN:New( "A2G 15 05" ):InitLimit( 3, 0 ):SpawnScheduled(5400, .1 )
+
+	if A2G15_Na_mapie == true then 
+		MESSAGE:New("Poligon A2G 15 został zrespawnowany.", 5):ToCoalition( coalition.side.BLUE )
+	else
+		MESSAGE:New("Poligon A2G 15 został uruchomiony.", 5):ToCoalition( coalition.side.BLUE )
+		A2G15_Na_mapie = true
+	end
+end
+
 -- POLIGONY AS-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	--AS1
@@ -709,6 +749,7 @@ Poligon_AS_05_Spawner()
 	Spawner_Main_A2G_12 = MENU_COALITION_COMMAND:New( coalition.side.BLUE, "A2G 12", Spawner_Main_A2G_Drugie, Poligon_A2G_12_Spawner)
 	Spawner_Main_A2G_13 = MENU_COALITION_COMMAND:New( coalition.side.BLUE, "A2G 13", Spawner_Main_A2G_Drugie, Poligon_A2G_13_Spawner)
 	Spawner_Main_A2G_14 = MENU_COALITION_COMMAND:New( coalition.side.BLUE, "A2G 14", Spawner_Main_A2G_Drugie, Poligon_A2G_14_Spawner)
+	Spawner_Main_A2G_15 = MENU_COALITION_COMMAND:New( coalition.side.BLUE, "A2G 15", Spawner_Main_A2G_Drugie, Poligon_A2G_15_Spawner)
 
 	Spawner_Main_AS_01 = MENU_COALITION_COMMAND:New( coalition.side.BLUE, "AS 01", Spawner_Main_AS, Poligon_AS_01_Spawner)
 	Spawner_Main_AS_02 = MENU_COALITION_COMMAND:New( coalition.side.BLUE, "AS 02", Spawner_Main_AS, Poligon_AS_02_Spawner)
