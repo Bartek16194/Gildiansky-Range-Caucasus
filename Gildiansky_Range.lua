@@ -136,7 +136,7 @@ timer.scheduleFunction(info_update, nil, 15)
 -- A2A 01 Vaziani J-11----------------------------	
 	
 	A2A_Vaziani_J11 = AI_A2A_DISPATCHER:New( South_CAP_Detection )
-	A2A_Vaziani_J11:SetBorderZone( South_CAP_Border )
+	A2A_Vaziani_J11:SetBorderZone( J11_CAP_Border )
 	
 	A2A_Vaziani_J11:SetSquadron( "Vaziani J11", AIRBASE.Caucasus.Tbilisi_Lochini, "RED CAP VAZIANI J11")
 	A2A_Vaziani_J11:SetSquadronCap( "Vaziani J11", CapZone_RED_Vaziani_J11, UTILS.FeetToMeters(21000), UTILS.FeetToMeters(27000), UTILS.KnotsToKmph(270), UTILS.KnotsToKmph(320), UTILS.KnotsToKmph(270), UTILS.KnotsToKmph(900), "BARO" )
