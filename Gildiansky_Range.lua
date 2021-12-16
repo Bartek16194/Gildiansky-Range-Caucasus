@@ -607,6 +607,43 @@ function Poligon_A2G_15_Spawner()
 	end
 end
 
+-- A2G #16
+function Poligon_A2G_16_Spawner()
+	A2G16_01= SPAWN:New( "A2G 16 01" ):InitLimit( 4, 0 ):SpawnScheduled(5400, .1 )
+	A2G16_02= SPAWN:New( "A2G 16 02" ):InitLimit( 4, 0 ):SpawnScheduled(5400, .1 )
+	A2G16_03= SPAWN:New( "A2G 16 03" ):InitLimit( 5, 0 ):SpawnScheduled(5400, .1 )
+	A2G16_04= SPAWN:New( "A2G 16 04" ):InitLimit( 5, 0 ):SpawnScheduled(5400, .1 )
+	A2G16_05= SPAWN:New( "A2G 16 05" ):InitLimit( 3, 0 ):SpawnScheduled(5400, .1 )
+	A2G16_06= SPAWN:New( "A2G 16 06" ):InitLimit( 4, 0 ):SpawnScheduled(5400, .1 )
+	A2G16_07= SPAWN:New( "A2G 16 07" ):InitLimit( 4, 0 ):SpawnScheduled(5400, .1 )
+
+	if A2G16_Na_mapie == true then 
+		MESSAGE:New("Poligon A2G 16 został zrespawnowany.", 5):ToCoalition( coalition.side.BLUE )
+	else
+		MESSAGE:New("Poligon A2G 16 został uruchomiony.", 5):ToCoalition( coalition.side.BLUE )
+		A2G16_Na_mapie = true
+	end
+end
+
+-- A2G #17
+function Poligon_A2G_17_Spawner()
+	A2G17_01= SPAWN:New( "A2G 17 01" ):InitLimit( 5, 0 ):SpawnScheduled(5400, .1 )
+	A2G17_02= SPAWN:New( "A2G 17 02" ):InitLimit( 8, 0 ):SpawnScheduled(5400, .1 )
+	A2G17_03= SPAWN:New( "A2G 17 03" ):InitLimit( 5, 0 ):SpawnScheduled(5400, .1 )
+	A2G17_04= SPAWN:New( "A2G 17 04" ):InitLimit( 5, 0 ):SpawnScheduled(5400, .1 )
+	A2G17_05= SPAWN:New( "A2G 17 05" ):InitLimit( 11, 0 ):SpawnScheduled(5400, .1 )
+	A2G17_06= SPAWN:New( "A2G 17 06" ):InitLimit( 4, 0 ):SpawnScheduled(5400, .1 )
+	A2G17_07= SPAWN:New( "A2G 17 07" ):InitLimit( 4, 0 ):SpawnScheduled(5400, .1 )
+	A2G17_08= SPAWN:New( "A2G 17 08" ):InitLimit( 2, 0 ):SpawnScheduled(5400, .1 )
+
+	if A2G17_Na_mapie == true then 
+		MESSAGE:New("Poligon A2G 17 został zrespawnowany.", 5):ToCoalition( coalition.side.BLUE )
+	else
+		MESSAGE:New("Poligon A2G 17 został uruchomiony.", 5):ToCoalition( coalition.side.BLUE )
+		A2G17_Na_mapie = true
+	end
+end
+
 -- POLIGONY AS-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	--AS1
@@ -660,7 +697,6 @@ function Poligon_AS_04_Spawner()
 		AS4_Na_mapie = true
 	end
 end
-
 
 	--AS5
 function Poligon_AS_05_Spawner()
@@ -720,7 +756,6 @@ function Poligon_AS_06_Spawner()
 
 end
 
-
 -- Poligony morskie które startują na początku
 
 Poligon_AS_02_Spawner()
@@ -744,12 +779,15 @@ Poligon_AS_05_Spawner()
 	Spawner_Main_A2G_07 = MENU_COALITION_COMMAND:New( coalition.side.BLUE, "A2G 07", Spawner_Main_A2G_Pierwsze, Poligon_A2G_07_Spawner)
 	Spawner_Main_A2G_08 = MENU_COALITION_COMMAND:New( coalition.side.BLUE, "A2G 08", Spawner_Main_A2G_Pierwsze, Poligon_A2G_08_Spawner)
 	Spawner_Main_A2G_09 = MENU_COALITION_COMMAND:New( coalition.side.BLUE, "A2G 09", Spawner_Main_A2G_Pierwsze, Poligon_A2G_09_Spawner)
+	
 	Spawner_Main_A2G_10 = MENU_COALITION_COMMAND:New( coalition.side.BLUE, "A2G 10", Spawner_Main_A2G_Drugie, Poligon_A2G_10_Spawner)
 	Spawner_Main_A2G_11 = MENU_COALITION_COMMAND:New( coalition.side.BLUE, "A2G 11", Spawner_Main_A2G_Drugie, Poligon_A2G_11_Spawner)
 	Spawner_Main_A2G_12 = MENU_COALITION_COMMAND:New( coalition.side.BLUE, "A2G 12", Spawner_Main_A2G_Drugie, Poligon_A2G_12_Spawner)
 	Spawner_Main_A2G_13 = MENU_COALITION_COMMAND:New( coalition.side.BLUE, "A2G 13", Spawner_Main_A2G_Drugie, Poligon_A2G_13_Spawner)
 	Spawner_Main_A2G_14 = MENU_COALITION_COMMAND:New( coalition.side.BLUE, "A2G 14", Spawner_Main_A2G_Drugie, Poligon_A2G_14_Spawner)
 	Spawner_Main_A2G_15 = MENU_COALITION_COMMAND:New( coalition.side.BLUE, "A2G 15", Spawner_Main_A2G_Drugie, Poligon_A2G_15_Spawner)
+	Spawner_Main_A2G_16 = MENU_COALITION_COMMAND:New( coalition.side.BLUE, "A2G 16", Spawner_Main_A2G_Drugie, Poligon_A2G_16_Spawner)
+	Spawner_Main_A2G_17 = MENU_COALITION_COMMAND:New( coalition.side.BLUE, "A2G 17", Spawner_Main_A2G_Drugie, Poligon_A2G_17_Spawner)
 
 	Spawner_Main_AS_01 = MENU_COALITION_COMMAND:New( coalition.side.BLUE, "AS 01", Spawner_Main_AS, Poligon_AS_01_Spawner)
 	Spawner_Main_AS_02 = MENU_COALITION_COMMAND:New( coalition.side.BLUE, "AS 02", Spawner_Main_AS, Poligon_AS_02_Spawner)
