@@ -123,7 +123,7 @@ timer.scheduleFunction(info_update, nil, 15)
 	A2A_Vaziani_OLD:SetSquadronCap( "Beslan Sabre", CapZone_RED_Vaziani_Sabre, UTILS.FeetToMeters(10000), UTILS.FeetToMeters(19000), UTILS.KnotsToKmph(270), UTILS.KnotsToKmph(320), UTILS.KnotsToKmph(270), UTILS.KnotsToKmph(900), "BARO" )
 	A2A_Vaziani_OLD:SetSquadronCapRacetrack( "Beslan Sabre", UTILS.FeetToMeters(19000), UTILS.FeetToMeters(27000), 120, 305, 10*60, 20*60)
 	A2A_Vaziani_OLD:SetSquadronCapInterval( "Beslan Sabre", 1, 30, 90, 1 )
-	A2A_Vaziani_OLD:SetSquadronTakeoffFromRunway()("Beslan Sabre")
+	A2A_Vaziani_OLD:SetSquadronTakeoffFromRunway("Beslan Sabre")
 	
 	A2A_Vaziani_OLD:SetDefaultOverhead(1.25)
 	A2A_Vaziani_OLD:SetEngageRadius(65000)
