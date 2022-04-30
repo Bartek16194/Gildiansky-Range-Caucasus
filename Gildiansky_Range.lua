@@ -645,6 +645,59 @@ function Poligon_A2G_17_Spawner()
 	end
 end
 
+-- A2G #18
+function Poligon_A2G_18_Spawner()
+	A2G18_01= SPAWN:New( "A2G 18 01" ):InitLimit( 7, 0 ):SpawnScheduled(5400, .1 )
+	A2G18_02= SPAWN:New( "A2G 18 02" ):InitLimit( 6, 0 ):SpawnScheduled(5400, .1 )
+	A2G18_03= SPAWN:New( "A2G 18 03" ):InitLimit( 4, 0 ):SpawnScheduled(5400, .1 )
+	A2G18_04= SPAWN:New( "A2G 18 04" ):InitLimit( 4, 0 ):SpawnScheduled(5400, .1 )
+	A2G18_05= SPAWN:New( "A2G 18 05" ):InitLimit( 5, 0 ):SpawnScheduled(5400, .1 )
+	A2G18_06= SPAWN:New( "A2G 18 06" ):InitLimit( 6, 0 ):SpawnScheduled(5400, .1 )
+
+	if A2G18_Na_mapie == true then 
+		MESSAGE:New("Poligon A2G 18 został zrespawnowany.", 5):ToCoalition( coalition.side.BLUE )
+	else
+		MESSAGE:New("Poligon A2G 18 został uruchomiony.", 5):ToCoalition( coalition.side.BLUE )
+		A2G18_Na_mapie = true
+	end
+end
+
+-- A2G #19
+function Poligon_A2G_19_Spawner()
+	A2G19_01= SPAWN:New( "A2G 19 01" ):InitLimit( 9, 0 ):SpawnScheduled(5400, .1 )
+	A2G19_02= SPAWN:New( "A2G 19 02" ):InitLimit( 9, 0 ):SpawnScheduled(5400, .1 )
+	A2G19_03= SPAWN:New( "A2G 19 03" ):InitLimit( 9, 0 ):SpawnScheduled(5400, .1 )
+	A2G19_04= SPAWN:New( "A2G 19 04" ):InitLimit( 9, 0 ):SpawnScheduled(5400, .1 )
+	A2G19_05= SPAWN:New( "A2G 19 05" ):InitLimit( 13, 0 ):SpawnScheduled(5400, .1 )
+	A2G19_06= SPAWN:New( "A2G 19 06" ):InitLimit( 6, 0 ):SpawnScheduled(5400, .1 )
+	A2G19_07= SPAWN:New( "A2G 19 07" ):InitLimit( 6, 0 ):SpawnScheduled(5400, .1 )
+	A2G19_08= SPAWN:New( "A2G 19 08" ):InitLimit( 4, 0 ):SpawnScheduled(5400, .1 )
+	A2G19_09= SPAWN:New( "A2G 19 09" ):InitLimit( 4, 0 ):SpawnScheduled(5400, .1 )
+	A2G19_10= SPAWN:New( "A2G 19 10" ):InitLimit( 4, 0 ):SpawnScheduled(5400, .1 )
+	A2G19_11= SPAWN:New( "A2G 19 11" ):InitLimit( 11, 0 ):SpawnScheduled(5400, .1 )
+	A2G19_12= SPAWN:New( "A2G 19 12" ):InitLimit( 11, 0 ):SpawnScheduled(5400, .1 )
+	A2G19_13= SPAWN:New( "A2G 19 13" ):InitLimit( 11, 0 ):SpawnScheduled(5400, .1 )
+
+	if A2G19_Na_mapie == true then 
+		MESSAGE:New("Poligon A2G 19 został zrespawnowany.", 5):ToCoalition( coalition.side.BLUE )
+	else
+		MESSAGE:New("Poligon A2G 19 został uruchomiony.", 5):ToCoalition( coalition.side.BLUE )
+		A2G19_Na_mapie = true
+	end
+end
+
+-- A2G #20
+function Poligon_A2G_20_Spawner()
+	A2G20_01= SPAWN:New( "A2G 20 01" ):InitLimit( 7, 0 ):SpawnScheduled(5400, .1 )
+
+	if A2G20_Na_mapie == true then 
+		MESSAGE:New("Poligon A2G 20 został zrespawnowany.", 5):ToCoalition( coalition.side.BLUE )
+	else
+		MESSAGE:New("Poligon A2G 20 został uruchomiony.", 5):ToCoalition( coalition.side.BLUE )
+		A2G20_Na_mapie = true
+	end
+end
+
 -- POLIGONY AS-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	--AS1
@@ -789,6 +842,9 @@ Poligon_AS_05_Spawner()
 	Spawner_Main_A2G_15 = MENU_COALITION_COMMAND:New( coalition.side.BLUE, "A2G 15", Spawner_Main_A2G_Drugie, Poligon_A2G_15_Spawner)
 	Spawner_Main_A2G_16 = MENU_COALITION_COMMAND:New( coalition.side.BLUE, "A2G 16", Spawner_Main_A2G_Drugie, Poligon_A2G_16_Spawner)
 	Spawner_Main_A2G_17 = MENU_COALITION_COMMAND:New( coalition.side.BLUE, "A2G 17", Spawner_Main_A2G_Drugie, Poligon_A2G_17_Spawner)
+	Spawner_Main_A2G_18 = MENU_COALITION_COMMAND:New( coalition.side.BLUE, "A2G 18", Spawner_Main_A2G_Drugie, Poligon_A2G_18_Spawner)
+	Spawner_Main_A2G_19 = MENU_COALITION_COMMAND:New( coalition.side.BLUE, "A2G 19", Spawner_Main_A2G_Drugie, Poligon_A2G_19_Spawner)
+	--Spawner_Main_A2G_20 = MENU_COALITION_COMMAND:New( coalition.side.BLUE, "A2G 20", Spawner_Main_A2G_Drugie, Poligon_A2G_20_Spawner)
 
 	Spawner_Main_AS_01 = MENU_COALITION_COMMAND:New( coalition.side.BLUE, "AS 01", Spawner_Main_AS, Poligon_AS_01_Spawner)
 	Spawner_Main_AS_02 = MENU_COALITION_COMMAND:New( coalition.side.BLUE, "AS 02", Spawner_Main_AS, Poligon_AS_02_Spawner)
